@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-      render json: @product.to_json(only: [:name, :description, :indevtory, :id])
+    #  render json: @product.to_json(only: [:name, :description, :indevtory, :id])
   end
 
   def inventory
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     respond_to do |format|
       format.html { render :show }
-      format.json {render json: @product.to_json(only: [:name, :description, :id])}
+      format.json {render json: @product.to_json(only: [:name, :description, :inventory, :id])}
     end
   end
 
