@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+      render json: @product.to_json(only: [:name, :description, :indevtory, :id])
   end
 
   def inventory
